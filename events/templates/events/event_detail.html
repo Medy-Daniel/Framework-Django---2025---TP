@@ -1,0 +1,9 @@
+<h2>Détail de l'événement : {{ event.title }}</h2>
+<p>Date : {{ event.date }}</p>
+<p>{{ event.description }}</p>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Mettre à jour ma participation</button>
+</form>

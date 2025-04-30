@@ -1,0 +1,13 @@
+<h2>Liste des événements</h2>
+<ul>
+  {% for event in events %}
+    <li>
+      <a href="{% url 'event_detail' event.id %}">{{ event.title }}</a> - 
+      {{ event.date }} - Participants : {{ event.participant_count }}
+    </li>
+  {% endfor %}
+</ul>
+
+
+
+<p><a href="{% url 'create_event' %}">➕ Créer un événement</a></p>
