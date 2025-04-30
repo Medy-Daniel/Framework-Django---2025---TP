@@ -1,0 +1,66 @@
+# Python bytecode
+*.pyc
+*.pyo
+__pycache__/
+
+# Django specific
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.venv/*
+venv/*
+
+# Environment variables
+.env
+
+# Django migrations
+/migrations/
+
+# Static files
+/static/
+
+# Media files
+/media/
+
+# SQLite database
+*.sqlite3
+
+# pyenv
+.python-version
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# MacOS
+.DS_Store
+
+# Logs
+*.log
+
+# Dependency directories
+# pipenv
+Pipfile.lock
+
+# Virtualenv
+venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Django secret key
+secret_key.txt

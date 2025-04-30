@@ -6,6 +6,9 @@ class Event(models.Model):
     date = models.DateTimeField()
     description = models.TextField()
 
+    def participant_count(self):
+        return self.participation_set.filter(confirmed=True).count()
+
     def __str__(self):
         return self.title
 

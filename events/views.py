@@ -39,13 +39,17 @@ def events_list(request):
 @login_required
 def event_detail(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
-    participation, _ = Participation.objects.get_or_create(user=request.user, event=event)
+    participation, created = Participation.objects.get_or_create(user=request.user, event=event)
 
     if request.method == "POST":
-        participation.is_going = not participation.is_going
+        participation.confirmed = not participation.confirmed  # Utiliser confirmed au lieu de is_going
         participation.save()
+        return redirect('event_detail', event_id=event_id)  # Rediriger pour voir le changement
 
-    return render(request, "events/event_detail.html", {"event": event, "form": participation})
+    return render(request, "events/event_detail.html", {
+        "event": event, 
+        "participation": participation
+    })
 
 @login_required
 def create_event(request):

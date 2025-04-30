@@ -4,6 +4,15 @@
 
 <form method="post">
   {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Mettre à jour ma participation</button>
+  <p>
+    {% if participation.confirmed %}
+      Vous participez à cet événement
+      <button type="submit">Se désinscrire</button>
+    {% else %}
+      Vous ne participez pas à cet événement
+      <button type="submit">S'inscrire</button>
+    {% endif %}
+  </p>
 </form>
+
+<p><a href="{% url 'events_list' %}">⬅ Retour à la liste</a></p>
